@@ -1,0 +1,104 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=yes ')
+    meta(name='description', content='Administrative panel for a school that creates, reads, updates and deletes information of students and admins.')
+    meta(name='author', content='Olebuezi Obinna')
+    title SCHOOL CONTROL PORTAL 
+    // Bootstrap core CSS
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    link(href='/css/style.css', rel='stylesheet')
+    link(href='/css/fullscreen-image.css', rel='stylesheet')
+    
+    img#fsb_image(img='', src='/images/background.jpg')
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      .container
+        .navbar
+          img.rounded-circle(src='/images/icon.jpg', alt='Generic placeholder image', width='50', height='50')
+          a.navbar-brand(href='/', style='margin-left:0.6rem') SCHOOL CONTROL PORTAL
+        #navbarColor01.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='/') GO HOME
+                span.sr-only
+            if user
+              li.nav-item.active
+                a.nav-link(href='/articles/add') REGISTER STUDENTS
+          ul.navbar-nav.mr-auto
+            if user
+              li.nav-item.active 
+                a.nav-link(href='/users/logout') LOGOUT
+            else
+              li.nav-item
+                a.nav-link(href='/users/register') REGISTER
+              li.nav-item
+                a.nav-link(href='/users/login') LOGIN
+    
+ 
+    .container.card.text-white.bg-warning.mb-3(style='max-width: 60rem; margin-top: 2rem')
+      h4.card-header SECURITY HINT
+          p.card-body 
+            | All administrators should ensure thier passwords are safe and not easily quessed as malicious users may attempt to log in.
+          P
+    .container.card.text-white.bg-info.mb-3(style='max-width: 60rem')
+      h4.card-header NOTICE
+          p.card-body 
+            | Registrations made on this portal are protected with high-level security, thus regarded vital to the institution .
+          P
+    .container.card.border-dark.mb-3(style='max-width: 60rem')
+      h4.card-header
+        .card-body.text-dark
+          h4.card-title ALL DONE! NOW BEGIN
+          p.card-text
+            | Registrations made on this portal are protected with high-level security, thus they are regarded as vital to the institution .
+          P
+  
+     
+    .container.marketing
+      // Three columns of text below the carousel
+      .row
+      .jumbotron
+        ul
+          li
+            .col-lg-12
+              h2 SET UP YOUR REGISTRATION
+              p
+                | Welcome! Click on the 'Register' button and set up your personal details. Please make sure all fields are field correctly.
+              p
+                a.btn.btn-primary(href='users/register', role='button') Admin Register
+            // /.col-lg-4
+          li
+            .col-lg-12
+              h2 LOG INTO YOUR ACCOUNT
+              p
+                | So simple! Now you are registered. Log into your account with the username and password you registered.
+              p
+                a.btn.btn-primary(href='users/login', role='button') Login
+            // /.col-lg-4
+          li
+            .col-lg-12
+              h2 ONCE LOGGED IN, YOU ARE IN
+              p
+                | While logged into your account you can create, read, update and delete students account information as needs may arise. Only registered administrators have access to this section.
+              p
+                
+          
+            block content
+            br
+            hr
+    .myjumbotron
+      footer
+        p(style='font-size:1.4em; color:white; text-align:center') Developed by Olebuezi Obinna David for Andela Learning Community with MicroSoft © 2017
+  
+    script(src='/bower_components/jquery/dist/jquery.js') 
+    script(src='/js/popper.min.js')
+    script(src='js/bootstrap.min.js')
+    // Just to make our placeholder images work. Don't actually copy the next line!
+    script(src='/js/holder.min.js')
+    // IE10 viewport hack for Surface/desktop Windows 8 bug
+    script(src='/js/ie10-viewport-bug-workaround.js')
+    script(src='/js/main.js')
