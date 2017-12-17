@@ -117,6 +117,5 @@ password: janedoe
 ### Initial Author
 **Olajide Bolaji 'Nuel** - Software Developer at Andela
 
-#### By
-#### Forked, Cloned and Completed  to perform CRUD (create, read, update and delete) operation for  Andela Learning Community with Microsoft Assessment by
-##### Olebuezi Obinna David - Web App Developer
+#### Forked, Cloned and Completed  to perform CRUD (create, read, update and delete) operation for  Andela Learning Community with Microsoft Assessment by -
+#### Olebuezi Obinna David - Web App Developer
