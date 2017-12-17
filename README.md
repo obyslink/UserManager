@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # User Manager
-This is an ALC with Microsoft Assessment to perform crud operations using a school administrative panel. Here, Admins
+This is an ALC with Microsoft Assessment to perform CRUD operations using a school administrative panel. Here, Admins
 can modify and register new students into the school's database.
 
 This repository contains a simple demo API built with NodeJS.
@@ -25,6 +25,8 @@ DB_URL='mongodb://john:doe@localhost:27017/databaseName'
 
 ### API Documentation
 The API only has one endpoint which is the `/users` endpoint for saving users to the database. The endpoint works with the HTTP verbs: `POST`, `GET`, `PUT`, `DELETE`.
+
+##### Examples
 
 ###### POST HTTP Request
 -   `POST` /users
@@ -115,5 +117,5 @@ password: janedoe
 ### Initial Author
 **Olajide Bolaji 'Nuel** - Software Developer at Andela
 
-### Forked, Cloned and Completed  to perform CRUD (create, read, update and delete) operation for  Andela Learning Community with Microsoft Assessment by
-**Olebuezi Obinna David** - Web App Developer
+#### Forked, Cloned and Completed  to perform CRUD (create, read, update and delete) operation for  Andela Learning Community with Microsoft Assessment by
+####Olebuezi Obinna David - Web App Developer
