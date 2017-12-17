@@ -16,28 +16,31 @@ html(lang='en')
 
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarColor01", aria-controls="navbarColor01", aria-expanded="false", aria-label="Toggle navigation", style="")
+        span.navbar-toggler-icon
+    
       .container
         .navbar
           img.rounded-circle(src='/images/icon.jpg', alt='Generic placeholder image', width='50', height='50')
-          a.navbar-brand(href='/', style='margin-left:0.6rem') SCHOOL CONTROL PORTAL
-        #navbarColor01.collapse.navbar-collapse
-          ul.navbar-nav.mr-auto
+          a.navbar-brand(href='/', style='margin-left:0.5rem; font-size:1.7rem') SCHOOL CONTROL PORTAL
+      #navbarColor01.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/') GO HOME
+              span.sr-only
+          if user
             li.nav-item.active
-              a.nav-link(href='/') GO HOME
-                span.sr-only
-            if user
-              li.nav-item.active
-                a.nav-link(href='/articles/add') REGISTER STUDENTS
-          ul.navbar-nav.mr-auto
-            if user
-              li.nav-item.active 
-                a.nav-link(href='/users/logout') LOGOUT
-            else
-              li.nav-item
-                a.nav-link(href='/users/register') REGISTER
-              li.nav-item
-                a.nav-link(href='/users/login') LOGIN
-    
+              a.nav-link(href='/articles/add') REGISTER STUDENTS
+        ul.navbar-nav.mr-auto
+          if user
+            li.nav-item.active 
+              a.nav-link(href='/users/logout') LOGOUT
+          else
+            li.nav-item
+              a.nav-link(href='/users/register') REGISTER
+            li.nav-item
+              a.nav-link(href='/users/login') LOGIN
+  
  
     .container.card.text-white.bg-warning.mb-3(style='max-width: 60rem; margin-top: 2rem')
       h4.card-header SECURITY HINT
@@ -49,54 +52,56 @@ html(lang='en')
           p.card-body 
             | Registrations made on this portal are protected with high-level security, thus regarded vital to the institution .
           P
-    .container.card.border-dark.mb-3(style='max-width: 60rem')
+    
+  
+     
+    .container.marketing
+      .row
+      .jumbotron
+        .container
+          != messages('message', locals)
+          if errors
+            each error, i in errors
+              div(class="alert alert-dismissible alert-warning") #{error.msg}      
+        
+          block content
+          br
+          hr
+          ul
+            li
+              .col-lg-12
+                h2 SET UP YOUR REGISTRATION
+                p
+                  | Welcome! Click on the 'Register' button and set up your personal details. Please make sure all fields are field correctly.
+                p
+                  a.btn.btn-primary(href='users/register', role='button') Admin Register
+              // /.col-lg-4
+            li
+              .col-lg-12
+                h2 LOG INTO YOUR ACCOUNT
+                p
+                  | So simple! Now you are registered. Log into your account with the username and password you registered.
+                p
+                  a.btn.btn-primary(href='users/login', role='button') Login
+              // /.col-lg-4
+            li
+              .col-lg-12
+                h2 ONCE LOGGED IN, YOU ARE IN
+                p
+                  | While logged into your account you can create, read, update and delete students account information as needs may arise. Only registered administrators have access to the section below.
+                p
+          br
+          br
+          hr
+
+    .container.card.border-info.mb-3(style='max-width: 60rem')
       h4.card-header
-        .card-body.text-dark
+        .card-body.text-info
           h4.card-title ALL DONE! NOW BEGIN
           p.card-text
             | Registrations made on this portal are protected with high-level security, thus they are regarded as vital to the institution .
           P
-  
-     
-    .container.marketing
-      // Three columns of text below the carousel
-      .row
-      .jumbotron
-        ul
-          li
-            .col-lg-12
-              h2 SET UP YOUR REGISTRATION
-              p
-                | Welcome! Click on the 'Register' button and set up your personal details. Please make sure all fields are field correctly.
-              p
-                a.btn.btn-primary(href='users/register', role='button') Admin Register
-            // /.col-lg-4
-          li
-            .col-lg-12
-              h2 LOG INTO YOUR ACCOUNT
-              p
-                | So simple! Now you are registered. Log into your account with the username and password you registered.
-              p
-                a.btn.btn-primary(href='users/login', role='button') Login
-            // /.col-lg-4
-          li
-            .col-lg-12
-              h2 ONCE LOGGED IN, YOU ARE IN
-              p
-                | While logged into your account you can create, read, update and delete students account information as needs may arise. Only registered administrators have access to the section below.
-              p
-          br
-          br
-          hr
-          .container
-            != messages('message', locals)
-            if errors
-              each error, i in errors
-                div(class="alert alert-dismissible alert-warning") #{error.msg}      
-          
-            block content
-            br
-            hr
+
     .myjumbotron
       footer
         p(style='font-size:1.4em; color:white; text-align:center') Developed by Olebuezi Obinna David (+2348133497153) for Andela Learning Community with MicroSoft © 2017

@@ -16,11 +16,12 @@ This application was developed using [ExpressJS](http://expressjs.com/). MongoDB
 * Clone the repository by entering the command `git clone https://github.com/obyslink/UserManager` in the terminal.
 * Navigate to the project folder using `cd UserManager` on your terminal (or command prompt)
 * After cloning, install the application's dependencies with the command `npm install`.
-* Create a `.env` file in your root directory as described in `.env.sample` file. Variables such as DB_URL (which must be a mongoDB URL) and PORT are defined in the .env file and it is essential you create this file before running the application.
+* Create a `.env` file in your root directory. Variables such as DB_URL (which must be a mongoDB URL) and PORT are defined in the .env file and it is essential you create this file before running the application.
 ```
 PORT=1060
 DB_URL='mongodb://john:doe@localhost:27017/databaseName'
 ```
+Ensure you go to 'config/database' file to confirm databasename also.
 * After this, you can then start the server with the command: `npm start`.
 
 ### API Documentation
