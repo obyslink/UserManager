@@ -1,10 +1,10 @@
 extends layout
 
 block content
-  h1.text-success #{title}
-  h2.text-muted Control Panel for managing registration details
-  p.text-info List of registered students. Click to modify registration details.
-  ul.list-group
-    each article, i in articles
-      li.list-group-item
-        a(href="/articles/"+article._id)= article.title
+  .card.border-success.mb-3
+    h1.card-header #{title}
+    h5.card-header.text-muted Control Panel for managing registration details!!! Click to modify students registration details.
+    ul.list-group
+      each article, i in articles
+        li.list-group-item.blockquote
+          a(href="/articles/"+article._id)= article.title

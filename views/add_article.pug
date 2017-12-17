@@ -1,16 +1,17 @@
 extends layout
 
 block content
-  h1 #{title}
-  form(method='POST', action='/articles/add')
-    #form-group
-      label Student's name:
-      input.form-control(name='title', type='text')
-    #form-group
-      label Administrator's name:
-      input.form-control(name='author', type='text')    
-    #form-group
-      label Student's details:
-      textarea.form-control(name='body')
-    br
-    input.btn.btn-primary(type='submit',value='Submit')
+  .card.border-success.mb-3
+    h1.card-header #{title}
+    form(method='POST', action='/articles/add')
+      #form-group
+        label.card-body.text-info.blockquote Student's name:
+        input.form-control-lg(name='title', type='text')
+      #form-group
+        label.card-body.text-info.blockquote Administrator's name:
+        input.form-control-lg(name='author', type='text')    
+      #form-group
+        label.card-body.text-info.blockquote Student's details:
+        textarea.form-control-lg(name='body')
+      br
+      input.btn-lg.btn-success.btn-block(type='submit',value='Submit')

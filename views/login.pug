@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  h1 Admin Login
-  form(method='POST', action='/users/login')
-    #form-group
-      label Username:
-      input.form-control(name='username',type='text')
-    #form-group
-      label Password:
-      input.form-control(name='password',type='password')
-    br
-    input.btn.btn-primary(type='submit',value='Submit')
+  .card.border-success.mb-3
+    h1 Admin Login
+    form(method='POST', action='/users/login')
+      #form-group
+        label.card-body.text-info.blockquote Username:
+        input.form-control-lg(name='username',type='text')
+      #form-group
+        label.card-body.text-info.blockquote Password:
+        input.form-control-lg(name='password',type='password')
+      br
+      input.btn-lg.btn-success.btn-block(type='submit',value='Submit')

@@ -83,16 +83,23 @@ html(lang='en')
             .col-lg-12
               h2 ONCE LOGGED IN, YOU ARE IN
               p
-                | While logged into your account you can create, read, update and delete students account information as needs may arise. Only registered administrators have access to this section.
+                | While logged into your account you can create, read, update and delete students account information as needs may arise. Only registered administrators have access to the section below.
               p
-                
+          br
+          br
+          hr
+          .container
+            != messages('message', locals)
+            if errors
+              each error, i in errors
+                div(class="alert alert-dismissible alert-warning") #{error.msg}      
           
             block content
             br
             hr
     .myjumbotron
       footer
-        p(style='font-size:1.4em; color:white; text-align:center') Developed by Olebuezi Obinna David for Andela Learning Community with MicroSoft © 2017
+        p(style='font-size:1.4em; color:white; text-align:center') Developed by Olebuezi Obinna David (+2348133497153) for Andela Learning Community with MicroSoft © 2017
   
     script(src='/bower_components/jquery/dist/jquery.js') 
     script(src='/js/popper.min.js')

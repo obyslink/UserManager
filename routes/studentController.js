@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// Article Model
-let Article = require('../models/article');
+// Student Model
+let Article = require('../models/student');
 // User Model
 let User = require('../user/user');
 
@@ -119,7 +119,7 @@ function ensureAuthenticated(req, res, next){
     return next();
   } else {
     req.flash('danger', 'Please login');
-    res.redirect('/users/login');
+    res.redirect('/userController/login');
   }
 }
 

@@ -6,10 +6,12 @@ const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const config = require('./config/database');
 
 const cors = require('cors');
 
 require('dotenv').config()
+
 
 // Init App
 var app = require('./app');
@@ -22,7 +24,7 @@ var server = app.listen(port, function() {
 });
 
 // Bring in Models
-let Article = require('./models/article');
+let Article = require('./models/student');
 
 // Load View Engine
 app.set('views', path.join(__dirname, 'views'));
@@ -87,10 +89,16 @@ app.get('/', function(req, res){
       console.log(err);
     } else {
       res.render('index', {
-        title:'School Control Portal',
+        title:'School Information System',
         articles: articles
       });
     }
   });
 });
+
+// Route Files
+let articles = require('./routes/studentController');
+let userController = require('./user/userController');
+app.use('/articles', articles);
+app.use('/users', userController);
 
