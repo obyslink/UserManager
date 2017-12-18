@@ -16,6 +16,7 @@ require('dotenv').config()
 // Init App
 var app = require('./app');
 
+//port
 var port = process.env.PORT;
 
 // Start Server
@@ -89,7 +90,7 @@ app.get('/', function(req, res){
       console.log(err);
     } else {
       res.render('index', {
-        title:'School Information System',
+        title:'School Control Panel',
         articles: articles
       });
     }
@@ -99,6 +100,6 @@ app.get('/', function(req, res){
 // Route Files
 let articles = require('./routes/studentController');
 let userController = require('./user/userController');
-app.use('/articles', articles);
+app.use('/students', articles);
 app.use('/users', userController);
 

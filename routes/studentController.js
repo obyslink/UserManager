@@ -8,7 +8,7 @@ let User = require('../user/user');
 
 // Add Route
 router.get('/add', ensureAuthenticated, function(req, res){
-  res.render('add_article', {
+  res.render('new_student', {
     title:'Add student details'
   });
 });
@@ -23,7 +23,7 @@ router.post('/add', function(req, res){
   let errors = req.validationErrors();
 
   if(errors){
-    res.render('add_article', {
+    res.render('new_student', {
       title:'Add  student details',
       errors:errors
     });
@@ -52,7 +52,7 @@ router.get('/edit/:id', ensureAuthenticated, function(req, res){
       req.flash('danger', 'Not Authorized');
       res.redirect('/');
     }
-    res.render('edit_article', {
+    res.render('student_edit', {
       title:'Edit student details',
       article:article
     });

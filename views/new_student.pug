@@ -3,7 +3,7 @@ extends layout
 block content
   .card.border-success.mb-3
     h1.card-header #{title}
-    form(method='POST', action='/articles/add')
+    form(method='POST', action='/students/add')
       #form-group
         label.card-body.text-info.blockquote Student's name:
         input.form-control-lg(name='title', type='text')

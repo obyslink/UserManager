@@ -12,7 +12,7 @@ let User = require('../user/user');
 // CREATES A NEW USER
 // Register Form
 router.get('/register', function(req, res){
-    res.render('register');
+    res.render('new_user');
   });
   
   // Register Proccess
@@ -33,7 +33,7 @@ router.get('/register', function(req, res){
     let errors = req.validationErrors();
   
     if(errors){
-      res.render('register', {
+      res.render('new_user', {
         errors:errors
       });
     } else {
@@ -55,7 +55,7 @@ router.get('/register', function(req, res){
               console.log(err);
               return;
             } else {
-              req.flash('success','You are now registered and can log in');
+              req.flash('success','Registration successful. Please log in');
               res.redirect('/users/login');
             }
           });
@@ -85,11 +85,11 @@ router.get('/login', function(req, res){
     res.redirect('/users/login');
   });
 
-  //api section
+//API section
 // RETURNS ALL THE USERS IN THE DATABASE
 router.get('/', function (req, res) {
     User.find({}, function (err, users) {
-        if (err) return res.status(500).send("There was a problem finding the users.");
+        if (err) return res.status(500).send("Cannot find users.");
         res.status(200).send(users);
     });
 });
@@ -97,7 +97,7 @@ router.get('/', function (req, res) {
 // GETS A SINGLE USER FROM THE DATABASE
 router.get('/:id', function (req, res) {
     User.findById(req.params.id, function (err, user) {
-        if (err) return res.status(500).send("There was a problem finding the user.");
+        if (err) return res.status(500).send("Cannot find this user.");
         if (!user) return res.status(404).send("No user found.");
         res.status(200).send(user);
     });

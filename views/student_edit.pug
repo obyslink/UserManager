@@ -3,7 +3,7 @@ extends layout
 block content
   .card.border-success.mb-3
     h1.card-header #{title}
-    form(method='POST', action='/articles/edit/'+article._id)
+    form(method='POST', action='/students/edit/'+article._id)
       #form-group
         label.card-body.text-info.blockquote Administrator Code:
         input.form-control-lg(name='author', type='text', value=article.author)

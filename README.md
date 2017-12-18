@@ -16,13 +16,12 @@ This application was developed using [ExpressJS](http://expressjs.com/). MongoDB
 * Clone the repository by entering the command `git clone https://github.com/obyslink/UserManager` in the terminal.
 * Navigate to the project folder using `cd UserManager` on your terminal (or command prompt)
 * After cloning, install the application's dependencies with the command `npm install`.
-* Create a `.env` file in your root directory. Variables such as DB_URL (which must be a mongoDB URL) and PORT are defined in the .env file and it is essential you create this file before running the application.
-```
-PORT=1060
-DB_URL='mongodb://john:doe@localhost:27017/databaseName'
-```
-Ensure you go to 'config/database' file to confirm databasename also.
-* After this, you can then start the server with the command: `npm start`.
+
+* Note that `.env` file in your the directory available for this test. Variables such as DB_URL (which must be a mongoDB URL) and PORT are defined in the .env file and it is essential you check this file before running the application.
+
+* Start mongodb using `net start mongodb` in the command prompt terminal in `mongodb\bin` installation directory as `Administrator`.
+
+* After this, you can then start the app with the command: `npm start`.
 
 ### API Documentation
 The API only has one endpoint which is the `/users` endpoint for saving users to the database. The endpoint works with the HTTP verbs: `POST`, `GET`, `PUT`, `DELETE`.
